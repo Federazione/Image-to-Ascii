@@ -1,145 +1,242 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Federazione/Image-to-Ascii/main/assets/banner.png" alt="Image to ASCII Banner" width="900">
-  <h1>Image to ASCII</h1>
-  <p><strong>Transform images into stunning ASCII art in seconds.</strong></p>
+
+  <h1>🖼️ Generatore ASCII & Braille Ultra-HD</h1>
+
+  <p><strong>Trasforma qualsiasi immagine in arte testuale ASCII o Braille ad altissima risoluzione, con output ottimizzato per Blocco Note, terminale o HTML interattivo a colori.</strong></p>
+
   <p>
-    <a href="#">
-      <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+    <a href="https://github.com/Federazione/Image-to-Ascii">
+      <img src="https://img.shields.io/badge/licenza-MIT-blue.svg" alt="Licenza MIT">
     </a>
-    <a href="#">
+    <a href="https://github.com/Federazione/Image-to-Ascii">
       <img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="Python 3.10+">
     </a>
-    <a href="#">
-      <img src="https://img.shields.io/badge/status-active-success.svg" alt="Status">
+    <a href="https://github.com/Federazione/Image-to-Ascii">
+      <img src="https://img.shields.io/badge/stato-attivo-success.svg" alt="Stato attivo">
+    </a>
+    <a href="https://github.com/Federazione/Image-to-Ascii">
+      <img src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg" alt="Piattaforma">
+    </a>
+    <a href="https://github.com/Federazione/Image-to-Ascii">
+      <img src="https://img.shields.io/badge/dipendenze-Pillow%20%7C%20NumPy-orange.svg" alt="Dipendenze">
     </a>
   </p>
+
 </div>
 
-<div align="center">
-  <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Project preview" width="900">
-</div>
+---
 
-<h2>✨ Overview</h2>
+<h2>✨ Panoramica</h2>
 
 <p>
-  <strong>Image to ASCII</strong> is a lightweight tool that converts an image into an ASCII-style representation while preserving the visual essence of the original.
-  It is perfect for creative coding projects, terminal-based visualizations, retro aesthetics, and quick artistic experiments.
+  <strong>Generatore ASCII & Braille Ultra-HD</strong> è uno strumento Python avanzato che converte qualsiasi immagine in arte testuale di alta qualità, preservando i dettagli visivi anche a risoluzioni molto ridotte.
+  Il progetto nasce dall'obiettivo di ottenere la <em>massima chiarezza possibile</em> nei file <code>.txt</code> per Windows Blocco Note, ma supporta anche terminale, VS Code e Discord.
 </p>
 
 <p>
-  Whether you want to generate artistic text from a photo, create a terminal-based display, or simply explore a fun way to transform images, this project gives you an elegant and easy-to-use solution.
+  Tre modalità di rendering, un'esportazione HTML interattiva a colori con zoom in tempo reale, e un'interfaccia da riga di comando semplice e immediata.
 </p>
 
-<hr />
+---
 
-<h2>🚀 Features</h2>
+<h2>🚀 Funzionalità</h2>
 
 <ul>
-  <li>Convert images to ASCII art with customizable density and contrast.</li>
-  <li>Supports multiple image formats.</li>
-  <li>Simple command-line usage.</li>
-  <li>Fast rendering with clean output.</li>
-  <li>Flexible configuration for width, height, and character set.</li>
+  <li>🧠 <strong>Algoritmo a due stadi</strong> con downsampling piramidale Lanczos e maschera di contrasto (Unsharp Mask) multi-frequenza.</li>
+  <li>⣿ <strong>Modalità Braille Ultra-HD</strong>: risoluzione effettiva 8× per carattere (2×4 dot), perfetta per dettagli fini.</li>
+  <li>✍️ <strong>ASCII Crisp</strong>: rampe di caratteri calibrate per font monospace Windows (Consolas/Courier).</li>
+  <li>█ <strong>Blocchi Shading</strong>: effetto pixel-art retrò con caratteri Unicode.</li>
+  <li>🌐 <strong>Esportazione HTML a colori</strong>: visualizzatore interattivo con zoom in tempo reale, copia negli appunti e download del testo.</li>
+  <li>🎯 <strong>Riconoscimento automatico dello sfondo</strong>: adatta l'output per Blocco Note (sfondo chiaro) o terminale (sfondo scuro).</li>
+  <li>🧹 <strong>Pulizia automatica del rumore</strong>: niente pixel sporchi o "polvere" nelle zone di sfondo.</li>
+  <li>📁 Supporto a <strong>PNG, JPG, WEBP</strong> e immagini con <strong>trasparenza alfa</strong>.</li>
+  <li>⚡ Rendering fulmineo con <strong>NumPy vectorized</strong>: elabora immagini in millisecondi.</li>
+  <li>🖱️ Interfaccia interattiva guidata + <strong>CLI completa</strong> per automazione.</li>
+  <li>🪟 Launcher <strong>.bat</strong> per Windows con supporto drag-and-drop.</li>
 </ul>
 
-<hr />
+---
 
-<h2>🛠️ Installation</h2>
+<h2>🛠️ Installazione</h2>
 
 ```bash
 git clone https://github.com/Federazione/Image-to-Ascii.git
 cd Image-to-Ascii
-pip install -r requirements.txt
+pip install Pillow numpy
 ```
 
-<hr />
+> **Nota**: Python 3.10 o superiore è richiesto.
 
-<h2>📌 Usage</h2>
+---
+
+<h2>📌 Utilizzo</h2>
+
+<h3>🖱️ Modalità Interattiva (consigliata)</h3>
+
+Avvia semplicemente lo script e segui le istruzioni a schermo:
 
 ```bash
-python main.py input.jpg --width 120 --contrast 1.5
+python image.py
 ```
 
-You can also try:
+Oppure su Windows fai doppio click su `avvia_ascii.bat` — puoi anche **trascinarci sopra un'immagine** direttamente!
+
+<h3>⌨️ Modalità Riga di Comando (CLI)</h3>
 
 ```bash
-python main.py image.png --width 80 --chars " .:-=+*#%@"
+python image.py foto.jpg --width 90 --mode all --bg light
 ```
-
-<h3>Available options</h3>
 
 ```bash
---input        Path to the source image
---width        Width of the ASCII output
---height       Optional custom height
---chars        Character set used for rendering
---contrast     Adjust contrast for sharper results
---invert       Invert the ASCII output
+python image.py foto.png -w 150 --mode braille --bg dark -o ./output
 ```
 
-<hr />
+<h3>⚙️ Opzioni disponibili</h3>
 
-<h2>🎨 Example</h2>
-
-<p>Original image:</p>
-
-<img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=900&q=80" alt="Sample image" width="500">
-
-<p>ASCII output:</p>
-
-```text
-                 .,:;irsXA253hSAMl30
-             .,:;irsXA253hSAl30
-         .,:;irsXA253hSAm3
-       .,:;irsXA253hSAl
-      .,:;irsXA253hSAl
-        .,;irsXA253hSAl
-           .,;irsXA253hSAl
-             .,:;irsXA253hSAlc
-                 .,:;irsXA253hSAl
-                    .,:;irsXA253hS
+```
+percorso          Percorso del file immagine (PNG, JPG, WEBP)
+-w, --width       Larghezza in caratteri (default: 90)
+-m, --mode        Formato: all | braille | ascii | blocks (default: all)
+--bg              Sfondo target: light (Blocco Note) | dark (Terminale) (default: light)
+--no-html         Non generare la versione HTML
+-o, --outdir      Cartella di destinazione dei file generati
 ```
 
-<hr />
+---
 
-<h2>📁 Project Structure</h2>
+<h2>🎨 Modalità di Output</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Modalità</th>
+      <th>File generato</th>
+      <th>Caratteristiche</th>
+      <th>Uso consigliato</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>⭐ <strong>Braille Ultra-HD</strong></td>
+      <td><code>*_braille_w90.txt</code></td>
+      <td>Risoluzione 8× per cella (2×4 dot)</td>
+      <td>Massimo dettaglio in Blocco Note</td>
+    </tr>
+    <tr>
+      <td>✍️ <strong>ASCII Crisp</strong></td>
+      <td><code>*_ascii_w90.txt</code></td>
+      <td>Rampa calibrata per monospace</td>
+      <td>Look classico ad alta leggibilità</td>
+    </tr>
+    <tr>
+      <td>█ <strong>Blocchi Shading</strong></td>
+      <td><code>*_blocchi_w90.txt</code></td>
+      <td>Caratteri Unicode █▓▒░</td>
+      <td>Effetto pixel-art retrò</td>
+    </tr>
+    <tr>
+      <td>🌐 <strong>HTML a Colori</strong></td>
+      <td><code>*_colori_w90.html</code></td>
+      <td>Colori originali, zoom in tempo reale</td>
+      <td>Presentazione e condivisione</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+<h2>📐 Grandezze disponibili</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scelta</th>
+      <th>Colonne</th>
+      <th>Descrizione</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>40</td><td>Molto piccolo — ultra-compatto, tascabile</td></tr>
+    <tr><td>2</td><td>60</td><td>Piccolo — ottimo per finestre ridotte</td></tr>
+    <tr><td>3 ⭐</td><td>90</td><td><strong>Medio (consigliato)</strong> — perfetto per Blocco Note standard</td></tr>
+    <tr><td>4</td><td>150</td><td>Grande — pieno schermo, molto dettagliato</td></tr>
+    <tr><td>5</td><td>250</td><td>Gigante HD — risoluzione massima da poster</td></tr>
+    <tr><td>–</td><td>Personalizzata</td><td>Digita qualsiasi valore (es. 45, 75, 120…)</td></tr>
+  </tbody>
+</table>
+
+---
+
+<h2>💡 Consigli d'oro per Blocco Note</h2>
+
+> **Suggerimento**: Per la migliore esperienza con i file `.txt` su Windows Blocco Note:
+> 1. Apri il file con **Blocco Note**.
+> 2. Vai su **Visualizza → A capo automatico** e assicurati che sia **disattivato**.
+> 3. Usa **Ctrl + rotella del mouse** per regolare lo zoom e goderti l'immagine!
+
+---
+
+<h2>📁 Struttura del progetto</h2>
 
 ```text
 Image-to-Ascii/
-├── main.py
-├── README.md
-├── requirements.txt
-├── assets/
-│   └── banner.png
-├── src/
-│   ├── converter.py
-│   └── utils.py
-└── examples/
-    └── sample.jpg
+├── image.py              ← Script principale (menu interattivo + CLI)
+├── avvia_ascii.bat       ← Launcher Windows con supporto drag-and-drop
+└── README.md
 ```
 
-<hr />
+I file generati vengono salvati nella **stessa cartella dell'immagine sorgente** (o nella directory specificata con `-o`):
 
-<h2>🤝 Contributing</h2>
+```text
+mia_foto/
+├── mia_foto_braille_w90.txt
+├── mia_foto_ascii_w90.txt
+├── mia_foto_blocchi_w90.txt
+└── mia_foto_colori_w90.html
+```
+
+---
+
+<h2>📦 Dipendenze</h2>
+
+```bash
+pip install Pillow numpy
+```
+
+| Libreria | Versione minima | Utilizzo |
+|----------|----------------|---------|
+| `Pillow` | 9.0+ | Caricamento, ridimensionamento e miglioramento delle immagini |
+| `NumPy`  | 1.21+ | Elaborazione vettoriale ad altissima velocità |
+
+---
+
+<h2>🤝 Contribuire</h2>
 
 <p>
-  Contributions are welcome! If you’d like to improve the project, feel free to open an issue or submit a pull request.
+  I contributi sono benvenuti! Se vuoi migliorare il progetto, aggiungere nuove rampe di caratteri, modalità di output o qualsiasi altra funzionalità, sentiti libero di aprire una issue o inviare una pull request.
 </p>
 
 ```bash
-git checkout -b feature/my-improvement
-git commit -m "Add a new ASCII rendering option"
-git push origin feature/my-improvement
+# Crea un branch per la tua modifica
+git checkout -b feature/nuova-funzionalita
+
+# Fai le tue modifiche, poi:
+git commit -m "Aggiunge nuova modalità di rendering"
+git push origin feature/nuova-funzionalita
 ```
 
-<hr />
+---
 
-<h2>📜 License</h2>
+<h2>📜 Licenza</h2>
 
 <p>
-  This project is licensed under the <a href="#">MIT License</a>.
+  Questo progetto è rilasciato sotto licenza <a href="https://github.com/Federazione/Image-to-Ascii">MIT</a> — libero di usare, modificare e distribuire.
 </p>
 
+---
+
 <div align="center">
-  <p><strong>Made with ❤️ for creative coding and retro-style visuals.</strong></p>
+  <p><strong>Fatto con ❤️ per l'arte testuale retrò e la creatività digitale.</strong></p>
+  <p><em>Massima risoluzione. Nessun compromesso.</em></p>
 </div>
+
